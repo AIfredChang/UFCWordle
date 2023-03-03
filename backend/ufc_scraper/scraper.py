@@ -8,7 +8,7 @@ import json
 def get_all_fighters_url():
     '''Get pandas table of all UFC fighters (Name, Height, Weight, Reach, Record, etc.)'''
     all_fighters_URL = []
-    for c in ascii_lowercase:
+    for c in tqdm(ascii_lowercase):
         URL = "http://ufcstats.com/statistics/fighters?char={}&page=all".format(c)
         page = requests.get(URL)
         soup = BeautifulSoup(page.content, "html.parser")
